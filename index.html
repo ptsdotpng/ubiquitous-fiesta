@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>in other news</title>
+  <title>:et;tu:</title>
   <link rel="icon" href="data:image/gif;base64,R0lGODlhEAAQAAAAACwAAAAAAQABAAACASgAOw==">
 
   <style>
@@ -100,5 +100,40 @@
 <body>
   <div id="main"></div>
 </body>
-<script src="./index.js"></script>
+<script type="module">
+import {ettu} from "./ettu.js"
+
+const text = `
+# hello
+this is just some text. aint got too much to it. but :a header;first_header: can create an inline linke to another section. you can also have links :don't exist yet;new:. we also have linkks |links;test|. 
+<br/><br/>
+:why?;why:
+<br/><br/>
+:how?;how:
+<br/><br/>
+:todo:
+
+# first_header
+another text thing. they get their own colors. you can :link back;hello: circularly. 
+
+# why
+cause it's a :fun: little project. i started writting this out when i wans't sure how to format a doc. i was writting out markwod, but the strucutre of the document was gettig a little messy. every couple of words, i wanted to add an explantion, a linke, or something else to clarify. <br/><br/>
+i didn't want to get a full wiki system. so here's the next best thing. write some markdown and link sections together. worse comes ot worse, it's still legible.
+
+# how
+write text. add doc links with 'colon term colon' (no :escape characters;todo: yet). add outside links with 'pipe term pipe'. if the display term is different than the search one, put 'display semi-colon search' instead
+
+# todo
+right now, all of this is very barebones, the base things are in, but there's still a few things to add: better newline handling - don't insert brs in the text; more markdown support, empahsys, lists, etc...;export modified text; set initial rendered terd;change focused term; view all terms/all links
+
+|refs|
+test;github.com/ptsdotpng/
+`
+
+
+const trgt = document.getElementById("main")
+
+ettu(trgt, text)
+</script>
+
 </html>
